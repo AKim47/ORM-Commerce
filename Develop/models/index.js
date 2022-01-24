@@ -7,7 +7,6 @@ const ProductTag = require('./ProductTag');
 // Products belongsTo Category
 Product.belongsTo(Category, {
   foreignKey: 'category_id',
-  allowNull: true
 });
 
 // Categories have many Products
@@ -33,5 +32,5 @@ module.exports = {
   Product,
   Category,
   Tag,
-  ProductTag,
+  ProductTag
 };
