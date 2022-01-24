@@ -116,7 +116,7 @@ router.put('/:id', (req, res) => {
         .map((tag_id) => {
           return {
             product_id: req.params.id,
-            tag_id,
+            tag_id
           };
         });
       // figure out which ones to remove
@@ -144,12 +144,12 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(dbUserData => {
-      if (!dbUserData) {
+    .then(dbProductData => {
+      if (!dbProductData) {
         res.status(404).json({ message: 'No product found with this id' });
         return;
       }
-      res.json(dbUserData);
+      res.json(dbProductData);
     })
     .catch(err => {
       console.log(err);
